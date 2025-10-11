@@ -65,18 +65,19 @@ Qwen3 30B has been my go-to model. It's large enough to handle complex reasoning
 
 ## My Use Case: "Vibe Coding"
 
-I do a lot of rapid prototyping with Node.js web apps using heavy AI assistance. My usual workflow involves VSCode with Claude Code extension, where I describe what I want and the AI helps implement it.
+I do a lot of rapid prototyping with Node.js web apps using heavy AI assistance. My usual workflow involves VSCode with Claude Code or Roo code extension, where I describe what I want and the AI helps implement it right there in the editor.
 
 I wanted to see if local models could replace this workflow. The results have been educational:
 
 **The Good:**
+
 - Complete privacy - code never leaves my machine
 - No rate limits or "you've sent too many messages" warnings
 - Can run specialized coding models
-- Roo Code (a local coding assistant) offered a similar list-based workflow
 
 **The Reality Check:**
-- More error correction needed compared to Claude or GPT-4
+
+- More error correction needed compared to Claude or Gemini
 - Takes longer to get production-ready code
 - Cloud services can run massive models (100B+ parameters) that would need $50k+ of hardware locally
 
@@ -110,6 +111,7 @@ This project taught me several things:
 ## Should You Try This?
 
 If you have:
+
 - A modern GPU with at least 12GB VRAM (24GB+ is better)
 - Fast storage (models are 10-50GB each)
 - Curiosity about AI infrastructure
