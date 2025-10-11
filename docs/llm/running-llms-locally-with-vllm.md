@@ -48,6 +48,7 @@ gpu_memory_utilization: 0.9  # Use 90% of available VRAM
 
 **VRAM Estimation Tool**
 Before downloading a 15GB model only to find it won't run, the estimator predicts memory requirements. It calculates:
+
 - Base model size
 - KV cache (memory for conversation history)
 - Activation memory (working memory during generation)
