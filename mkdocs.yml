@@ -22,8 +22,8 @@ theme:
 
 nav:
   - Home: index.md
-  - Guides:
-    - guides/sky-fttp-opnsense.md
+  - broadband:
+    - broadband/sky-fttp-opnsense.md
 
 plugins:
   - search
