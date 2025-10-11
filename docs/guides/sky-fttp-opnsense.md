@@ -8,13 +8,13 @@ Getting Sky FTTP working with OPNsense is straightforward once you know the corr
 - Sky FTTP connection
 - Direct connection from OPNsense WAN port to Openreach ONT
 
-Note: Sky Voice/VoIP will not work without the Sky router.
+**Note: Sky Voice/VoIP will not work without the Sky router.**
 
 ## IPv4 Configuration
 
-Navigate to **Interfaces → WAN** and ensure DHCP is selected as the IPv4 Configuration Type.
+Navigate to `Interfaces → WAN` and ensure DHCP is selected as the IPv4 Configuration Type.
 
-Scroll down to **Lease Requirements** and enter the following in the **Send Options** field:
+Scroll down to `Lease Requirements` and enter the following in the `Send Options` field:
 
 ```
 dhcp-client-identifier "anything@skydsl|anything"
@@ -26,9 +26,9 @@ You can use any text before and after the `@skydsl|` separator. Sky only checks 
 dhcp-client-identifier "myrouter@skydsl|mypassword"
 ```
 
-**[Screenshot: DHCPv4 Lease Requirements section with Send Options filled in]**
+[Screenshot: DHCPv4 Lease Requirements section with Send Options filled in]
 
-Leave the Hostname field blank or enter a hostname of your choice. Keep other settings at their defaults.
+Leave the `Hostname` field blank or enter a hostname of your choice. Keep other settings at their defaults.
 
 ## IPv6 Configuration
 
@@ -39,7 +39,7 @@ Configure the following settings:
 - **Prefix delegation size**: 56
 - **Request prefix only**: Checked
 
-**[Screenshot: DHCPv6 configuration showing prefix size 56 and Request prefix only checked]**
+[Screenshot: DHCPv6 configuration showing prefix size 56 and Request prefix only checked]
 
 Sky provides a /56 IPv6 prefix but does not provide a global IPv6 address on the WAN interface (link-local only).
 
@@ -47,9 +47,9 @@ Sky provides a /56 IPv6 prefix but does not provide a global IPv6 address on the
 
 This step is critical to prevent Sky from changing your IPv6 prefix allocation.
 
-Go to **Interfaces → Settings** and find the **IPv6 DHCP** section. Enable the **Prevent Release** option.
+Go to `Interfaces → Settings` and find the `IPv6 DHCP` section. Enable the `Prevent Release` option.
 
-**[Screenshot: Interfaces Settings page showing Prevent Release option enabled]**
+[Screenshot: Interfaces Settings page showing Prevent Release option enabled]
 
 Sky's DHCPv6 servers use sticky addresses. If OPNsense sends a release signal, your allocated prefix will likely change.
 
@@ -57,12 +57,12 @@ Sky's DHCPv6 servers use sticky addresses. If OPNsense sends a release signal, y
 
 Save all settings and apply the configuration. Your OPNsense firewall should now connect directly to the Openreach ONT and obtain both IPv4 and IPv6 connectivity.
 
-Check **Interfaces → Overview** to verify you have:
+Check `Interfaces → Overview` to verify you have:
 
 - An IPv4 address assigned to WAN
 - An IPv6 prefix delegated (you won't see a global IPv6 address on WAN, only link-local)
 
-**[Screenshot: Interface overview showing active WAN connection with IPv4 and IPv6]**
+[Screenshot: Interface overview showing active WAN connection with IPv4 and IPv6]
 
 ## Troubleshooting
 
@@ -76,4 +76,4 @@ If the connection fails:
 
 ## Reference
 
-Based on the official OPNsense documentation: https://docs.opnsense.org/manual/how-tos/SkyUK.html
+Based on the official [OPNsense documentation](https://docs.opnsense.org/manual/how-tos/SkyUK.html)
