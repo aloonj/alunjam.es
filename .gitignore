@@ -22,3 +22,6 @@ site/
 # OS
 .DS_Store
 Thumbs.db
+
+# Logs
+build.log
