@@ -1,7 +1,7 @@
 # Home
 `Hello World!` This is my personal site where I share my thoughts, guides, projects, and discoveries.
 
-## Latest Posts
+## Latest 
 
 ### [Sky FTTP with OPNsense](broadband/sky-fttp-opnsense.md)
 Getting Sky FTTP working with OPNsense is straightforward once you know the correct settings. Sky uses DHCP Option 61 for authentication instead of PPPoE, and you'll need both IPv4 and IPv6 configured.
