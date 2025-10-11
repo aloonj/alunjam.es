@@ -1,0 +1,41 @@
+site_name: "[alunjam.es]"
+site_url: https://alunjam.es
+site_description: This is my personal site where I share my thoughts, guides, projects, and discoveries
+site_author: Alun
+repo_url: https://github.com/aloonj/
+repo_name: aloonj
+
+theme:
+  name: simple-blog
+  custom_dir: overrides
+  highlightjs: true
+  theme_style: light
+  sidebar: true
+  navigation_depth: 3
+  site_name_style: fw-bold
+  components:
+    title: false
+    home_title: false
+    page_title: false
+    site_name: true
+    footer: false
+
+nav:
+  - Home: index.md
+  - Guides:
+    - guides/sky-fttp-opnsense.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - tables
+  - admonition
+
+# Set the directory for the built site
+site_dir: site
