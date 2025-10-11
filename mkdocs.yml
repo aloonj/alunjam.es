@@ -24,6 +24,8 @@ nav:
   - Home: index.md
   - broadband:
     - broadband/sky-fttp-opnsense.md
+  - llm:
+    - llm/running-llms-locally-with-vllm.md
 
 plugins:
   - search
