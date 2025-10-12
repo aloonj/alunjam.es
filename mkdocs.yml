@@ -1,4 +1,4 @@
-site_name: "[alunjam.es]"
+site_name: "[alunjam.es ~]$"
 site_url: https://alunjam.es
 site_description: This is my personal site where I share my thoughts, guides, projects, and discoveries
 site_author: Alun
@@ -21,11 +21,12 @@ theme:
     footer: false
 
 nav:
-  - Home: index.md
-  - broadband:
-    - broadband/sky-fttp-opnsense.md
-  - llm:
-    - llm/running-llms-locally-with-vllm.md
+  - /home: index.md
+  - /usr/share/docs:
+    - Broadband:
+      - broadband/sky-fttp-opnsense.md
+    - LLM/AI:
+      - llm/running-llms-locally-with-vllm.md
 
 plugins:
   - search
