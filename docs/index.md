@@ -3,7 +3,7 @@
 
 ## Latest
 
-### [Deploying CloudStack on Nested VMs with Ansible](cloudstack/nested-cloudstack-ansible.md)
+### [Nested CloudStack with Ansible](cloudstack/nested-cloudstack-ansible.md)
 After working with vSphere, KVM, XCP-NG, and OpenStack over the years, CloudStack was one platform I hadn't properly explored. I built an Ansible playbook that deploys a complete CloudStack environment on a single KVM host using nested virtualization.
 
 [Read more →](cloudstack/nested-cloudstack-ansible.md)
