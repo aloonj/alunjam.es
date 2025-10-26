@@ -23,12 +23,12 @@ theme:
 nav:
   - /home: index.md
   - /usr/share/docs:
-    - Virtualisation/Cloud:
-      - cloudstack/nested-cloudstack-ansible.md
     - Broadband:
       - broadband/sky-fttp-opnsense.md
     - LLM/AI:
       - llm/running-llms-locally-with-vllm.md
+    - Virtualisation/Cloud:
+      - cloudstack/nested-cloudstack-ansible.md
 
 plugins:
   - search
