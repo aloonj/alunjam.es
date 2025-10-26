@@ -1,7 +1,12 @@
 # Home
 `Hello World!` This is my personal site where I share my thoughts, guides, projects, and discoveries.
 
-## Latest 
+## Latest
+
+### [Deploying CloudStack on Nested VMs with Ansible](cloudstack/nested-cloudstack-ansible.md)
+After working with vSphere, KVM, XCP-NG, and OpenStack over the years, CloudStack was one platform I hadn't properly explored. I built an Ansible playbook that deploys a complete CloudStack environment on a single KVM host using nested virtualization.
+
+[Read more →](cloudstack/nested-cloudstack-ansible.md)
 
 ### [Sky FTTP with OPNsense](broadband/sky-fttp-opnsense.md)
 Getting Sky FTTP working with OPNsense is straightforward once you know the correct settings. Sky uses DHCP Option 61 for authentication instead of PPPoE, and you'll need both IPv4 and IPv6 configured.
