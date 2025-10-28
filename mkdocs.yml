@@ -27,6 +27,9 @@ nav:
       - broadband/sky-fttp-opnsense.md
     - LLM/AI:
       - llm/running-llms-locally-with-vllm.md
+    - Mobile & Tablets:
+      - mobile-tablets/lenovo-tab-p11-lineageos-install.md
+      - mobile-tablets/lenovo-tab-p11-stock-recovery.md
     - Virtualisation/Cloud:
       - cloudstack/nested-cloudstack-ansible.md
 
