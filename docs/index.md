@@ -1,19 +1,56 @@
+---
+hide:
+  - toc
+---
+
 # Home
 `Hello World!` This is my personal site where I share my thoughts, guides, projects, and discoveries.
 
-## Latest
+<div class="terminal-cards-grid" markdown="1">
 
-### [Nested CloudStack with Ansible](cloudstack/nested-cloudstack-ansible.md)
-After working with vSphere, KVM, XCP-NG, and OpenStack over the years, CloudStack was one platform I hadn't properly explored. I built an Ansible playbook that deploys a complete CloudStack environment on a single KVM host using nested virtualization.
+<div class="terminal-card" markdown="1">
+<div class="terminal-header">
+<span class="terminal-icon">📡</span> ~/broadband
+</div>
+<div class="terminal-body" markdown="1">
 
-[Read more →](cloudstack/nested-cloudstack-ansible.md)
+- [Sky FTTP with OPNsense](broadband/sky-fttp-opnsense.md)
 
-### [Sky FTTP with OPNsense](broadband/sky-fttp-opnsense.md)
-Getting Sky FTTP working with OPNsense is straightforward once you know the correct settings. Sky uses DHCP Option 61 for authentication instead of PPPoE, and you'll need both IPv4 and IPv6 configured.
+</div>
+</div>
 
-[Read more →](broadband/sky-fttp-opnsense.md)
+<div class="terminal-card" markdown="1">
+<div class="terminal-header">
+<span class="terminal-icon">🤖</span> ~/llm-ai
+</div>
+<div class="terminal-body" markdown="1">
 
-### [Running LLMs Locally with vLLM](llm/running-llms-locally-with-vllm.md)
-I've been curious about running Large Language Models (LLMs) - think ChatGPT-style AI models - on my own hardware instead of relying on cloud services. After picking up two second-hand RTX 3090 graphics cards from CEX (£575 each), I decided to dive in and see what's possible with 48GB of VRAM at my disposal.
+- [Running LLMs Locally with vLLM](llm/running-llms-locally-with-vllm.md)
 
-[Read more →](llm/running-llms-locally-with-vllm.md)
+</div>
+</div>
+
+<div class="terminal-card" markdown="1">
+<div class="terminal-header">
+<span class="terminal-icon">📱</span> ~/mobile-tablets
+</div>
+<div class="terminal-body" markdown="1">
+
+- [Tab P11 LineageOS Install](mobile-tablets/lenovo-tab-p11-lineageos-install.md)
+- [Tab P11 Stock Recovery](mobile-tablets/lenovo-tab-p11-stock-recovery.md)
+
+</div>
+</div>
+
+<div class="terminal-card" markdown="1">
+<div class="terminal-header">
+<span class="terminal-icon">☁️</span> ~/virtualisation-cloud
+</div>
+<div class="terminal-body" markdown="1">
+
+- [Nested CloudStack with Ansible](cloudstack/nested-cloudstack-ansible.md)
+
+</div>
+</div>
+
+</div>

@@ -1,0 +1,475 @@
+/* Fix dropdown menu positioning to prevent overflow off screen */
+
+/* Desktop: proper dropdown positioning */
+@media (min-width: 1200px) {
+    /* Primary dropdown: appears below the nav item */
+    .navbar-nav .dropdown > .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 0;
+    }
+
+    /* For dropdowns near the right edge, align to right instead */
+    .navbar-nav .dropdown:last-child > .dropdown-menu,
+    .navbar-nav .dropdown:nth-last-child(2) > .dropdown-menu,
+    .navbar-nav .dropdown:nth-last-child(3) > .dropdown-menu {
+        right: 0;
+        left: auto;
+    }
+
+    /* Nested submenu: appears to the right of parent item */
+    .dropdown-menu .submenu {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        margin-top: 0;
+        margin-left: 0;
+        display: none;
+    }
+
+    /* If submenu would go off right edge, position it to the left instead */
+    .dropdown-menu .submenu {
+        right: auto;
+        left: 100%;
+    }
+
+    /* Show submenu on hover of parent item */
+    .dropdown-menu > li:hover > .submenu {
+        display: block !important;
+    }
+
+    /* Also show submenu when parent has 'show' class (for click behavior) */
+    .dropdown-menu > li.show > .submenu {
+        display: block !important;
+    }
+
+    /* Make category items with submenus clickable */
+    .dropdown-menu > li > .dropdown-item[href="#"] {
+        cursor: pointer;
+    }
+
+    /* Prevent submenus from being too wide */
+    .dropdown-menu,
+    .dropdown-menu .submenu {
+        max-width: 400px;
+        min-width: 250px;
+    }
+
+    /* Small separator between dropdown items on desktop */
+    .dropdown-menu > li + li > .dropdown-item,
+    .dropdown-menu > li + li > a,
+    .submenu > li + li > .dropdown-item,
+    .submenu > li + li > a {
+        border-top: 1px solid rgba(158, 158, 158, 0.3);
+        margin-top: 0.25rem;
+        padding-top: 0.5rem;
+    }
+
+    /* Hide the Bootstrap arrow on dropdown toggle for desktop */
+    .navbar-nav .dropdown-toggle::after {
+        display: inline-block;
+    }
+}
+
+/* Mobile: Stack dropdowns vertically */
+@media (max-width: 1199.98px) {
+    /* Dropdown menus hidden by default on mobile */
+    .navbar-collapse .dropdown-menu {
+        position: static !important;
+        float: none;
+        width: auto;
+        margin: 0;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        display: none !important;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    /* Show dropdown when expanded */
+    .navbar-collapse .dropdown-menu.show {
+        display: block !important;
+        max-height: 2000px;
+        transition: max-height 0.5s ease-in;
+    }
+
+    /* Make dropdown toggle clickable on mobile */
+    .navbar-collapse .dropdown-toggle {
+        cursor: pointer;
+        position: relative;
+    }
+
+    /* Replace Bootstrap's arrow with our custom arrow indicator */
+    .navbar-collapse .dropdown-toggle::after {
+        content: "\25B6" !important;
+        display: inline-block !important;
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+        border: none !important;
+        vertical-align: middle;
+    }
+
+    .navbar-collapse .dropdown.show > .dropdown-toggle::after {
+        transform: rotate(90deg);
+    }
+
+    /* Indent primary dropdown items */
+    .navbar-collapse .dropdown > .dropdown-menu > li > .dropdown-item,
+    .navbar-collapse .dropdown > .dropdown-menu > li > a {
+        padding-left: 2rem;
+    }
+
+    /* Indent nested submenu items more */
+    .navbar-collapse .submenu .dropdown-item,
+    .navbar-collapse .submenu a {
+        padding-left: 3rem !important;
+    }
+
+    /* Small separator between submenu items only */
+    .navbar-collapse .submenu li + li .dropdown-item,
+    .navbar-collapse .submenu li + li a {
+        border-top: 1px solid rgba(158, 158, 158, 0.2);
+        margin-top: 0.25rem;
+        padding-top: 0.25rem;
+    }
+
+    /* Prevent thick borders on last items */
+    .navbar-collapse .submenu li:last-child .dropdown-item,
+    .navbar-collapse .submenu li:last-child a {
+        border-bottom: none !important;
+    }
+
+    /* Nested submenus - hidden by default on mobile */
+    .navbar-collapse .submenu {
+        position: static !important;
+        background-color: transparent !important;
+        border: none !important;
+        border-top: none !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+        display: none !important;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    /* Show submenu when parent has 'show' class */
+    .navbar-collapse .submenu.show {
+        display: block !important;
+        max-height: 2000px;
+        transition: max-height 0.5s ease-in;
+    }
+
+    /* Add small arrow to category items that have submenus */
+    .navbar-collapse .dropdown-menu > li > .dropdown-item[href="#"]::after {
+        content: " \25B6";
+        font-size: 0.8em;
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+        display: inline-block;
+    }
+
+    /* Rotate arrow when submenu is expanded */
+    .navbar-collapse .dropdown-menu > li.show > .dropdown-item[href="#"]::after {
+        transform: rotate(90deg);
+    }
+
+    /* Remove borders from parent dropdown menu items on mobile */
+    .navbar-collapse .dropdown-menu > li:last-child {
+        border-bottom: none !important;
+    }
+
+    .navbar-collapse .dropdown-menu > li:last-child > a {
+        border-bottom: none !important;
+    }
+}
+
+/* General improvements for all screen sizes */
+.dropdown-menu {
+    max-width: calc(100vw - 2rem);
+    overflow-wrap: break-word;
+}
+
+.dropdown-item {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* Remove the &raquo; (») arrows from category items - we'll use our own expand arrows */
+.dropdown-menu > li > .dropdown-item[href="#"] {
+    /* Hide the » character that appears in the HTML */
+}
+
+/* Use CSS to remove the » from the text content */
+.navbar-collapse .dropdown-menu > li > .dropdown-item[href="#"] {
+    /* The » is in the HTML, so we'll add our arrow via ::before and hide the text » */
+}
+
+/* Small separator between left sidebar navigation items */
+.sidebar .nav-item + .nav-item .nav-link {
+    border-top: 1px solid rgba(158, 158, 158, 0.2);
+    margin-top: 0.25rem;
+    padding-top: 0.5rem;
+}
+
+/* Reduce page margins on desktop to make better use of screen space */
+@media (min-width: 1200px) {
+    main {
+        margin-left: 2% !important;
+        margin-right: 2% !important;
+    }
+}
+
+/* Fix git name link to only be as wide as the text, but add padding to parent */
+.md-source-repo-url {
+    width: auto !important;
+    max-width: none !important;
+    padding-right: 5rem !important;
+}
+
+.md-source-repo-url a {
+    display: inline-block !important;
+    width: auto !important;
+}
+
+/* Ensure navbar items stay on one line on desktop */
+@media (min-width: 1200px) {
+    .navbar-nav {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .navbar-toggler {
+        display: none !important;
+    }
+
+    /* Make source detail inline to prevent wrapping */
+    .source-detail {
+        display: inline-flex !important;
+        align-items: center;
+    }
+
+    /* Give left sidebar a minimum width and prevent it from shrinking too much */
+    #component-sidebar {
+        flex: 0 0 350px !important;
+        min-width: 350px !important;
+        max-width: 400px !important;
+        position: sticky !important;
+        top: 20px !important;
+        align-self: flex-start !important;
+        max-height: calc(100vh - 40px) !important;
+        overflow-y: auto !important;
+    }
+
+    /* Allow main content to be flexible and absorb width changes */
+    #component-sidebar + div {
+        flex: 1 1 auto !important;
+    }
+}
+
+/* Keep sidebar and main content side-by-side on tablets and up */
+@media (min-width: 768px) {
+    #component-content {
+        flex: 1 1 auto !important;
+        max-width: none !important;
+    }
+
+    .container .row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+    }
+
+    /* Make sidebar sticky on tablets too */
+    #component-sidebar {
+        position: sticky !important;
+        top: 20px !important;
+        align-self: flex-start !important;
+        max-height: calc(100vh - 40px) !important;
+        overflow-y: auto !important;
+    }
+}
+
+/* Hide sidebar on homepage only */
+@media (min-width: 768px) {
+    /* Target pages where sidebar contains "Home" as first nav-item */
+    #component-sidebar .nav-item[data-bs-level="1"]:first-child:has(a[href="#home"]) {
+        /* This identifies the homepage - hide parent sidebar */
+    }
+
+    /* If sidebar has Home > Latest structure, it's the index page */
+    .container .row:has(#component-sidebar .nav-item a[href="#home"]) #component-sidebar {
+        display: none !important;
+    }
+
+    .container .row:has(#component-sidebar .nav-item a[href="#home"]) #component-content {
+        max-width: 100% !important;
+    }
+}
+
+/* Icons for navigation */
+.nav-icon, .dropdown-icon {
+    margin-right: 0.25rem;
+}
+
+/* Terminal dropdown menus */
+.terminal-dropdown {
+    background: #161b22 !important;
+    border: 2px solid #30363d !important;
+    border-radius: 6px !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4) !important;
+    padding: 0.5rem 0 !important;
+    /* Override Bootstrap CSS variables */
+    --bs-dropdown-link-hover-bg: #0d1117 !important;
+    --bs-dropdown-link-hover-color: #58a6ff !important;
+    --bs-dropdown-link-active-bg: #0d1117 !important;
+    --bs-dropdown-link-active-color: #58a6ff !important;
+}
+
+.terminal-dropdown .dropdown-item {
+    color: #c9d1d9 !important;
+    background-color: transparent !important;
+    font-family: 'Fira Mono', 'Courier New', monospace !important;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+}
+
+.terminal-dropdown .dropdown-item:hover,
+.terminal-dropdown .dropdown-item:focus,
+.terminal-dropdown .dropdown-item:active,
+.terminal-dropdown .dropdown-item.active {
+    background-color: #0d1117 !important;
+    color: #58a6ff !important;
+}
+
+.terminal-dropdown .dropdown-category {
+    color: #58a6ff !important;
+    font-weight: bold;
+    background-color: transparent !important;
+}
+
+.terminal-dropdown .dropdown-category:hover {
+    background-color: #0d1117 !important;
+}
+
+/* Fix submenu on desktop - nuclear option */
+@media (min-width: 1200px) {
+    /* Completely disable ALL Bootstrap transitions on desktop dropdown items */
+    .dropdown-menu.terminal-dropdown *,
+    .dropdown-menu.terminal-dropdown *::before,
+    .dropdown-menu.terminal-dropdown *::after {
+        transition: none !important;
+    }
+
+    /* Force our colors with maximum specificity */
+    .navbar-nav .dropdown .dropdown-menu.terminal-dropdown li a.dropdown-item {
+        background: transparent !important;
+        color: #c9d1d9 !important;
+    }
+
+    .navbar-nav .dropdown .dropdown-menu.terminal-dropdown li a.dropdown-item:hover,
+    .navbar-nav .dropdown .dropdown-menu.terminal-dropdown li a.dropdown-item:focus,
+    .navbar-nav .dropdown .dropdown-menu.terminal-dropdown li a.dropdown-item:active {
+        background: #0d1117 !important;
+        color: #58a6ff !important;
+    }
+
+    /* Fix parent category items when hovering submenu */
+    .navbar-nav .dropdown .dropdown-menu.terminal-dropdown li:hover > a.dropdown-category {
+        background: transparent !important;
+        color: #58a6ff !important;
+    }
+}
+
+/* Terminal-style cards for homepage */
+.terminal-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    max-width: 1200px;
+}
+
+@media (min-width: 768px) {
+    .terminal-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.terminal-card {
+    background: #0d1117;
+    border: 2px solid #30363d;
+    border-radius: 6px;
+    font-family: 'Fira Mono', 'Courier New', monospace;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-card:hover {
+    border-color: #58a6ff;
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.terminal-header {
+    background: #161b22;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #30363d;
+    font-size: 0.9rem;
+    color: #58a6ff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.terminal-header::before {
+    content: '●●●';
+    color: #30363d;
+    letter-spacing: 2px;
+    margin-right: 0.5rem;
+}
+
+.terminal-icon {
+    font-size: 1.2rem;
+}
+
+.terminal-body {
+    padding: 1.25rem;
+    color: #c9d1d9;
+}
+
+.terminal-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.terminal-body li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #c9d1d9;
+}
+
+.terminal-body li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #58a6ff;
+    font-weight: bold;
+}
+
+.terminal-body a {
+    color: #58a6ff !important;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.terminal-body a:hover {
+    color: #79c0ff !important;
+    text-decoration: underline;
+}

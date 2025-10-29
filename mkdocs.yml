@@ -20,6 +20,12 @@ theme:
     site_name: true
     footer: false
 
+extra_css:
+  - assets/css/custom.css
+
+extra_javascript:
+  - assets/js/mobile-menu.js
+
 nav:
   - /home: index.md
   - /usr/share/docs:
@@ -28,8 +34,8 @@ nav:
     - LLM/AI:
       - llm/running-llms-locally-with-vllm.md
     - Mobile & Tablets:
-      - mobile-tablets/lenovo-tab-p11-lineageos-install.md
-      - mobile-tablets/lenovo-tab-p11-stock-recovery.md
+      - Tab P11 LineageOS Install: mobile-tablets/lenovo-tab-p11-lineageos-install.md
+      - Tab P11 Stock Recovery: mobile-tablets/lenovo-tab-p11-stock-recovery.md
     - Virtualisation/Cloud:
       - cloudstack/nested-cloudstack-ansible.md
 
@@ -44,6 +50,7 @@ markdown_extensions:
   - pymdownx.superfences
   - tables
   - admonition
+  - md_in_html
 
 # Set the directory for the built site
 site_dir: site
