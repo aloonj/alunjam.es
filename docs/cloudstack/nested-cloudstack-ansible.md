@@ -4,6 +4,10 @@ After working with vSphere, KVM, XCP-NG, and OpenStack over the years, CloudStac
 
 The challenge was familiar: how do you test a distributed cloud platform without having multiple physical hosts lying around? The answer: nested virtualization.
 
+## What is Apache CloudStack?
+
+Apache CloudStack is an open-source Infrastructure-as-a-Service (IaaS) platform for building and managing large networks of virtual machines. It orchestrates compute, storage, and networking resources to provide a complete cloud infrastructure, similar to commercial solutions like VMware vSphere or AWS. CloudStack supports multiple hypervisors (KVM, VMware, XenServer) and provides features like self-service portals, multi-tenancy, and API-driven automation.
+
 ## What This Does
 
 I built an Ansible playbook that deploys a complete CloudStack environment on a single KVM host. It creates four nested VMs running on your physical machine:
@@ -13,6 +17,17 @@ I built an Ansible playbook that deploys a complete CloudStack environment on a 
 - Two KVM compute hosts
 
 The whole thing provisions itself using cloud-init, installs CloudStack 4.19, and gives you a working environment ready to configure via the CloudStack web UI.
+
+## Who This Is For
+
+Pretty much anyone who needs to work with CloudStack:
+
+- Students learning cloud platforms
+- Sysadmins who need quick test environments
+- People preparing for CloudStack deployments at work
+- Anyone wanting to understand how CloudStack operates without building a full cluster
+
+I built it for professional development, but it's equally useful for learning or testing features before deploying them in production.
 
 ## The Technical Bits
 
@@ -43,17 +58,6 @@ You'll want at least 20GB of RAM to run this, but 32GB is more comfortable. Here
 That's 18GB for the VMs alone, plus whatever your host OS needs. I'm running this on a Ryzen 7 9700X with 59GB RAM, so I've got plenty of headroom. Someone with 20GB could technically run it, but you'd be right at the limit with no room for anything else.
 
 Storage-wise, you need around 200GB free in `/var/lib/libvirt/images`. The base cloud images aren't huge, but the VM disks add up quickly.
-
-## Who This Is For
-
-Pretty much anyone who needs to work with CloudStack:
-
-- Students learning cloud platforms
-- Sysadmins who need quick test environments
-- People preparing for CloudStack deployments at work
-- Anyone wanting to understand how CloudStack operates without building a full cluster
-
-I built it for professional development, but it's equally useful for learning or testing features before deploying them in production.
 
 ## Future Plans
 
