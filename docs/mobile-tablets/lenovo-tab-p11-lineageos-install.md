@@ -15,13 +15,13 @@ This guide walks through installing LineageOS 20.0 (Android 13) GSI on the Lenov
 
 ## Preparation
 
-### Install Required Tools
+**Install Required Tools:**
 
 ```bash
 sudo apt install android-tools-adb android-tools-fastboot
 ```
 
-### Download Required Files
+**Download Required Files:**
 
 1. **LineageOS GSI** - Download from Andy Yan's SourceForge:
    ```bash
@@ -45,7 +45,7 @@ sudo apt install android-tools-adb android-tools-fastboot
 
 ## Installation Steps
 
-### 1. Boot into Fastboot Mode
+**1. Boot into Fastboot Mode**
 
 Power off the tablet, then:
 
@@ -60,7 +60,7 @@ sudo fastboot devices
 
 You should see your device serial number.
 
-### 2. Disable Verified Boot
+**2. Disable Verified Boot**
 
 Flash the vbmeta image to both slots to disable Android's verified boot:
 
@@ -69,7 +69,7 @@ sudo fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
 sudo fastboot --disable-verity --disable-verification flash vbmeta_system vbmeta.img
 ```
 
-### 3. Wipe Data
+**3. Wipe Data**
 
 Factory reset the device:
 
@@ -79,7 +79,7 @@ sudo fastboot -w
 
 This formats userdata and erases metadata partitions.
 
-### 4. Enter Fastbootd Mode
+**4. Enter Fastbootd Mode**
 
 Modern Android devices with dynamic partitions require fastbootd (userspace fastboot):
 
@@ -95,7 +95,7 @@ Verify connection:
 sudo fastboot devices
 ```
 
-### 5. Flash LineageOS System Image
+**5. Flash LineageOS System Image**
 
 Flash the LineageOS GSI to the system partition:
 
@@ -105,7 +105,7 @@ sudo fastboot flash system lineage-20.0-20251021-UNOFFICIAL-arm64_bvN.img
 
 This takes 1-2 minutes. You'll see multiple sparse image chunks being flashed.
 
-### 6. First Boot
+**6. First Boot**
 
 Reboot the tablet:
 
@@ -127,14 +127,14 @@ This clears incompatible cached data and LineageOS will boot properly.
 
 ## Post-Installation
 
-### What Works
+**What Works:**
 
 - All hardware functions (WiFi, Bluetooth, cameras, sensors)
 - Audio and video playback
 - Battery life
 - Display and touchscreen
 
-### Optional: Install Google Apps
+**Optional: Install Google Apps**
 
 LineageOS doesn't include Google services by default. To add them:
 
@@ -146,27 +146,27 @@ Alternatively, use microG for a privacy-focused open-source alternative.
 
 ## Troubleshooting
 
-### Boot Loop After Flashing
+**Boot Loop After Flashing:**
 
 If tablet continuously reboots to recovery:
 - Boot to Android Recovery
 - Select "Factory data reset"
 - Reboot system
 
-### Stuck at Lenovo Logo
+**Stuck at Lenovo Logo:**
 
 If stuck at Lenovo logo for more than 10 minutes:
 - Hold power button to force restart
 - Boot to fastboot (Power + Volume Down)
 - Repeat installation from step 5
 
-### WiFi or Bluetooth Not Working
+**WiFi or Bluetooth Not Working:**
 
 - Ensure you flashed the correct arm64_bvN variant (not arm64_bgN)
 - Stock boot.img must remain from original firmware
 - Don't mix firmware versions
 
-### Need to Revert to Stock
+**Need to Revert to Stock:**
 
 See the [Stock Recovery Guide](lenovo-tab-p11-stock-recovery.md) to restore factory firmware.
 
@@ -178,12 +178,6 @@ GSI (Generic System Image) builds work across many devices without device-specif
 - Clean Android experience
 - Works with stock kernel/drivers
 - No need for device-specific development
-
-## Credits
-
-- LineageOS GSI builds by Andy Yan
-- XDA Developers community for TB-J606F guides
-- Method tested on firmware version TB-J606F_S320383_240603_ROW
 
 ## References
 

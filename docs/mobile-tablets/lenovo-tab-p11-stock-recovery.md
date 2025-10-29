@@ -23,7 +23,7 @@ Use this method if your tablet:
 
 ## Installation Steps
 
-### 1. Install QDL Tool
+**1. Install QDL Tool**
 
 QDL is the Linux tool for Qualcomm EDL flashing:
 
@@ -32,7 +32,7 @@ sudo apt update
 sudo apt install qdl
 ```
 
-### 2. Download Stock Firmware
+**2. Download Stock Firmware**
 
 Download the latest official firmware from Internet Archive:
 
@@ -47,7 +47,7 @@ wget https://archive.org/download/tb-j606f/TB-J606F_S320383_240603_ROW.7z
 
 Latest firmware version: **TB-J606F_S320383_240603_ROW** (July 2024)
 
-### 3. Extract Firmware
+**3. Extract Firmware**
 
 ```bash
 sudo apt install p7zip-full
@@ -61,7 +61,7 @@ You should see files like:
 - patch*.xml
 - boot.img, super_*.img, etc.
 
-### 4. Enter EDL Mode
+**4. Enter EDL Mode**
 
 EDL (Emergency Download) mode is a low-level Qualcomm mode that bypasses Android entirely.
 
@@ -90,7 +90,7 @@ If you don't see this, try the button combo again. Some tablets require:
 - **Volume Up** instead of Volume Down
 - **Both Volume Up + Volume Down** together
 
-### 5. Flash Stock Firmware
+**5. Flash Stock Firmware**
 
 With the tablet in EDL mode and firmware extracted, run:
 
@@ -124,7 +124,7 @@ All critical partitions will be restored:
 - Modem, Bluetooth, DSP firmware
 - All partition tables
 
-### 6. Boot Tablet
+**6. Boot Tablet**
 
 Once flashing completes:
 
@@ -138,7 +138,7 @@ Once flashing completes:
 
 ## Troubleshooting
 
-### Device Not Detected in EDL Mode
+**Device Not Detected in EDL Mode:**
 
 - Try different USB cable (use data cable, not charge-only)
 - Try different USB ports (USB 2.0 sometimes works better than 3.0)
@@ -146,7 +146,7 @@ Once flashing completes:
 - Try holding both volume buttons together
 - On some units, you need to hold the button until you feel vibration (5+ seconds)
 
-### "waiting for programmer" Hangs Forever
+**"waiting for programmer" Hangs Forever:**
 
 - Disconnect and reconnect USB
 - Re-enter EDL mode
@@ -156,7 +156,7 @@ Once flashing completes:
   ```
   Log out and back in
 
-### QDL Command Fails with XML Errors
+**QDL Command Fails with XML Errors:**
 
 Ensure you're in the firmware directory:
 ```bash
@@ -166,14 +166,14 @@ ls *.xml
 
 All XML files must be present.
 
-### Tablet Boots to Recovery After Flashing
+**Tablet Boots to Recovery After Flashing:**
 
 This is normal if coming from a failed custom ROM. From recovery:
 - Select "Factory data reset"
 - Confirm
 - Select "Reboot system now"
 
-### Need to Install LineageOS Again
+**Need to Install LineageOS Again:**
 
 After restoring stock firmware:
 - Complete Android setup or skip it
@@ -224,7 +224,3 @@ Windows method is more user-friendly but requires driver installation.
 - [Internet Archive TB-J606F Firmware](https://archive.org/details/tb-j606f)
 - [XDA TB-J606F Unbrick Thread](https://xdaforums.com/t/unbrick-lenovo-p11.4247145/)
 - [Qualcomm EDL Mode Guide](https://www.thecustomdroid.com/qualcomm-edl-mode-guide/)
-
-## Credits
-
-Method tested and documented by Alun (October 2025)
