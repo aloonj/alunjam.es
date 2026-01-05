@@ -2,6 +2,7 @@ site_name: "[alunjam.es ~]$"
 site_url: https://alunjam.es
 site_description: This is my personal site where I share my thoughts, guides, projects, and discoveries
 site_author: Alun
+copyright: Copyright &copy; 2026 Alun James
 repo_url: https://github.com/aloonj/
 repo_name: aloonj
 
@@ -18,7 +19,7 @@ theme:
     home_title: false
     page_title: false
     site_name: true
-    footer: false
+    footer: true
 
 extra_css:
   - assets/css/custom.css

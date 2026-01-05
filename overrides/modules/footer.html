@@ -1,0 +1,40 @@
+<!-- block footer -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top" id="component-footer">
+    <div class="row">
+        <div class="col-12 col-md">
+            {%- block footer %}
+                {% include "/modules/copyright.html" %}
+            {%- endblock %}
+        </div>
+    </div>
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent" class="cookie-consent" style="display: none;">
+    <div class="cookie-consent-content">
+        <span>This site uses cookies for analytics.</span>
+        <div class="cookie-consent-buttons">
+            <button id="cookie-accept" class="cookie-btn cookie-accept">Accept</button>
+            <button id="cookie-reject" class="cookie-btn cookie-reject">Reject</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    var consent = localStorage.getItem('cookie-consent');
+    if (!consent) {
+        document.getElementById('cookie-consent').style.display = 'flex';
+    }
+    document.getElementById('cookie-accept').addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'accepted');
+        document.getElementById('cookie-consent').style.display = 'none';
+        if (typeof loadGA === 'function') loadGA();
+    });
+    document.getElementById('cookie-reject').addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'rejected');
+        document.getElementById('cookie-consent').style.display = 'none';
+    });
+})();
+</script>
+<!-- endblock -->

@@ -8,14 +8,24 @@
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <link rel="dns-prefetch" href="https://unpkg.com">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8Y8NVRJ5Q"></script>
+<!-- Google Analytics - only loaded after consent -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Z8Y8NVRJ5Q');
+  function loadGA() {
+    if (document.getElementById('ga-script')) return;
+    var s = document.createElement('script');
+    s.id = 'ga-script';
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z8Y8NVRJ5Q';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-Z8Y8NVRJ5Q');
+  }
+  if (localStorage.getItem('cookie-consent') === 'accepted') {
+    loadGA();
+  }
 </script>
 {{ super() }}
 {% endblock %}

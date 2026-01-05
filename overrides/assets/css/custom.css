@@ -540,3 +540,63 @@ img[alt="Pickles Prizes"] {
     margin-right: 0 !important;
     display: block;
 }
+
+/* Cookie consent banner */
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0d1117;
+    border-top: 2px solid #30363d;
+    padding: 1rem;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cookie-consent-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Fira Mono', monospace;
+    color: #c9d1d9;
+    font-size: 0.9rem;
+}
+
+.cookie-consent-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.cookie-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.cookie-accept {
+    background: #238636;
+    color: white;
+    border-color: #238636;
+}
+
+.cookie-accept:hover {
+    background: #2ea043;
+}
+
+.cookie-reject {
+    background: transparent;
+    color: #c9d1d9;
+}
+
+.cookie-reject:hover {
+    background: #21262d;
+}
