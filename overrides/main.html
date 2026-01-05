@@ -21,21 +21,26 @@
 {% endblock %}
 
 {% block styles %}
-<!-- Google Fonts with display=swap -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-  @font-face {
-    font-family: 'FontAwesome';
-    font-display: swap;
-  }
-</style>
+<!-- Preload critical CSS -->
+<link rel="preload" href="{{ 'assets/css/bootstrap.min.css'|url }}" as="style">
+<link rel="preload" href="{{ 'assets/css/main.min.css'|url }}" as="style">
 
+<!-- Critical CSS (render-blocking but preloaded) -->
 <link rel="stylesheet" href="{{ 'assets/css/bootstrap.min.css'|url }}">
 <link rel="stylesheet" href="{{ 'assets/css/root.min.css'|url }}">
 <link rel="stylesheet" href="{{ 'assets/css/main.min.css'|url }}">
-<link rel="stylesheet" href="{{ 'assets/css/media.min.css'|url }}">
-<link rel="stylesheet" href="{{ 'assets/css/mkdocstrings.min.css'|url }}">
+
+<!-- Non-critical CSS (async loaded) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'assets/css/media.min.css'|url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'assets/css/mkdocstrings.min.css'|url }}" media="print" onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ 'assets/css/media.min.css'|url }}">
+  <link rel="stylesheet" href="{{ 'assets/css/mkdocstrings.min.css'|url }}">
+</noscript>
 
 {%- for path in extra_css %}
 <link href="{{ path }}" rel="stylesheet">
