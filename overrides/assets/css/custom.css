@@ -1,3 +1,36 @@
+/* Softer text colors for dark theme */
+[data-bs-theme="dark"] {
+    --bs-body-color: #c9d1d9;
+    --bs-heading-color: #e6edf3;
+}
+
+[data-bs-theme="dark"] body,
+[data-bs-theme="dark"] p,
+[data-bs-theme="dark"] li,
+[data-bs-theme="dark"] td,
+[data-bs-theme="dark"] th {
+    color: #c9d1d9;
+}
+
+[data-bs-theme="dark"] h1,
+[data-bs-theme="dark"] h2,
+[data-bs-theme="dark"] h3,
+[data-bs-theme="dark"] h4,
+[data-bs-theme="dark"] h5,
+[data-bs-theme="dark"] h6 {
+    color: #e6edf3;
+}
+
+[data-bs-theme="dark"] code,
+[data-bs-theme="dark"] pre {
+    color: #c9d1d9;
+    background-color: #161b22;
+}
+
+[data-bs-theme="dark"] pre {
+    border: 1px solid #30363d;
+}
+
 /* Fix dropdown menu positioning to prevent overflow off screen */
 
 /* Desktop: proper dropdown positioning */
