@@ -2,6 +2,8 @@
 
 ## TableCommander
 
+![TableCommander](assets/img/tablecommander-logo.svg)
+
 Real-time tabletop gaming platform.
 
 **Stack:** Next.js, NestJS, Prisma, Redis, Socket.io
@@ -13,6 +15,8 @@ Real-time tabletop gaming platform.
 ---
 
 ## Pickles Prizes
+
+![Pickles Prizes](assets/img/pickles-prizes-logo.svg)
 
 Headless e-commerce storefront.
 
