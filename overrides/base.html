@@ -21,13 +21,12 @@
             {% endif %}
 
             {%- if config.theme.highlightjs %}
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+                <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" onload="hljs.highlightAll()"></script>
                 <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/grayscale-dark.min.css">
 
                 {%- for lang in config.hljs_languages %}
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/{{lang}}.min.js"></script>
+                    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/{{lang}}.min.js"></script>
                 {%- endfor %}
-                <script>hljs.highlightAll();</script>
             {%- endif %}
 
         {%- endblock %}
@@ -127,9 +126,9 @@
         {%- block scripts %}
 
             <script>var base_url = '{{ base_url }}';</script>
-            <script src="{{ 'assets/js/jquery-3.3.1.slim.min.js"'|url }}"></script>
-            <script src="{{ 'assets/js/bootstrap.bundle.min.js"'|url }}"></script>
-            <script src="{{ 'assets/js/main.min.js"'|url }}"></script>
+            <script defer src="{{ 'assets/js/jquery-3.3.1.slim.min.js'|url }}"></script>
+            <script defer src="{{ 'assets/js/bootstrap.bundle.min.js'|url }}"></script>
+            <script defer src="{{ 'assets/js/main.min.js'|url }}"></script>
 
             {%- for path in extra_javascript %}
                 <script src="{{ path }}" defer></script>
