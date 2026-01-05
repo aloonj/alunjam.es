@@ -1,13 +1,13 @@
 /* Dark theme overrides */
 [data-bs-theme="dark"] {
-    --bs-body-bg: #131417 !important;
+    --bs-body-bg: #161b22 !important;
     --bs-body-color: #c9d1d9 !important;
     --bs-heading-color: #c9d1d9 !important;
-    background-color: #131417 !important;
+    background-color: #161b22 !important;
 }
 
 [data-bs-theme="dark"] body {
-    background-color: #131417 !important;
+    background-color: #161b22 !important;
     color: #c9d1d9 !important;
 }
 
@@ -45,7 +45,7 @@
 [data-bs-theme="dark"] .container-fluid,
 [data-bs-theme="dark"] main,
 [data-bs-theme="dark"] .row {
-    background-color: #131417 !important;
+    background-color: #161b22 !important;
 }
 
 /* Fix dropdown menu positioning to prevent overflow off screen */
