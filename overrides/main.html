@@ -19,3 +19,38 @@
 </script>
 {{ super() }}
 {% endblock %}
+
+{% block styles %}
+<!-- Google Fonts with display=swap -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  @font-face {
+    font-family: 'FontAwesome';
+    font-display: swap;
+  }
+</style>
+
+<link rel="stylesheet" href="{{ 'assets/css/bootstrap.min.css'|url }}">
+<link rel="stylesheet" href="{{ 'assets/css/root.min.css'|url }}">
+<link rel="stylesheet" href="{{ 'assets/css/main.min.css'|url }}">
+<link rel="stylesheet" href="{{ 'assets/css/media.min.css'|url }}">
+<link rel="stylesheet" href="{{ 'assets/css/mkdocstrings.min.css'|url }}">
+
+{%- for path in extra_css %}
+<link href="{{ path }}" rel="stylesheet">
+{%- endfor %}
+
+{% if config.theme.theme_style %}
+    {% if config.theme.theme_style == 'dark' %}
+    <style>
+        :root {
+            --text: white;
+            --title: white;
+            --primary: white;
+            --background: black;
+        }
+    </style>
+    {% endif %}
+{% endif %}
+{% endblock %}
