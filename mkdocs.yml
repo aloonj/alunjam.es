@@ -28,6 +28,7 @@ extra_javascript:
 
 nav:
   - /home: index.md
+  - /var/www: portfolio.md
   - /usr/share/docs:
     - Broadband:
       - broadband/sky-fttp-opnsense.md
