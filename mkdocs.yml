@@ -9,7 +9,7 @@ theme:
   name: simple-blog
   custom_dir: overrides
   highlightjs: true
-  theme_style: light
+  theme_style: dark
   sidebar: true
   navigation_depth: 3
   site_name_style: fw-bold

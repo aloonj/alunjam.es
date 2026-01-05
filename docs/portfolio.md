@@ -2,7 +2,7 @@
 
 ## TableCommander
 
-![TableCommander](assets/img/tablecommander-logo.svg)
+[![TableCommander](assets/img/tablecommander-logo.svg)](https://tablecommander.com)
 
 Real-time tabletop gaming platform.
 
@@ -16,7 +16,7 @@ Real-time tabletop gaming platform.
 
 ## Pickles Prizes
 
-![Pickles Prizes](assets/img/pickles-prizes-logo.svg)
+[![Pickles Prizes](assets/img/pickles-prizes-logo.svg)](https://picklesprizes.co.uk)
 
 Headless e-commerce storefront.
 
