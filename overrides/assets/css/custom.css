@@ -473,3 +473,19 @@
     color: #79c0ff !important;
     text-decoration: underline;
 }
+
+/* Portfolio card styles */
+.portfolio-header {
+    justify-content: center;
+    padding: 1.5rem 1rem;
+}
+
+.portfolio-header::before {
+    display: none;
+}
+
+.portfolio-logo {
+    max-height: 60px;
+    max-width: 100%;
+    object-fit: contain;
+}

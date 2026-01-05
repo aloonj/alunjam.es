@@ -1,0 +1,93 @@
+<svg
+  width="420"
+  height="120"
+  viewBox="0 0 420 120"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" floodOpacity="0.3" />
+    </filter>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e1e" />
+      <stop offset="100%" stop-color="#141414" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#B8962E" />
+    </linearGradient>
+  </defs>
+
+  <!-- Logo icon (scaled and positioned) -->
+  <g transform="translate(10, 10) scale(1)">
+    <!-- Stack of cards -->
+    <rect
+      x="15" y="15" width="60" height="80" rx="5"
+      fill="#C9A227" opacity="0.15"
+      transform="rotate(-12 45 55)"
+      filter="url(#cardShadow)"
+    />
+    <rect
+      x="15" y="13" width="60" height="80" rx="5"
+      fill="#C9A227" opacity="0.25"
+      transform="rotate(-6 45 53)"
+      filter="url(#cardShadow)"
+    />
+
+    <!-- Front card -->
+    <rect
+      x="15" y="10" width="60" height="80" rx="5"
+      fill="url(#cardGrad)"
+      stroke="#C9A227"
+      stroke-width="2"
+      filter="url(#cardShadow)"
+    />
+
+    <!-- Gold art box -->
+    <rect
+      x="19" y="14" width="52" height="36" rx="2"
+      fill="url(#goldGrad)"
+    />
+
+    <!-- "T" in gold art box (Inter 700 as path) -->
+    <path
+      d="M36.5 22h17v3.2h-6.4v16.8h-4.2V25.2h-6.4V22z"
+      fill="#141414"
+    />
+
+    <!-- Card text box -->
+    <rect
+      x="19" y="54" width="52" height="32" rx="2"
+      fill="rgba(0,0,0,0.25)"
+      stroke="#C9A227"
+      stroke-width="0.5"
+      opacity="0.6"
+    />
+
+    <!-- "C" in text box (Inter 700 as path) -->
+    <path
+      d="M45 58.5c-5.8 0-10 4.4-10 10.5s4.2 10.5 10 10.5c3.6 0 6.4-1.6 8.1-4.2l-3.2-2c-1.1 1.6-2.8 2.6-4.9 2.6-3.5 0-5.8-2.7-5.8-6.9s2.3-6.9 5.8-6.9c2.1 0 3.8 1 4.9 2.6l3.2-2c-1.7-2.6-4.5-4.2-8.1-4.2z"
+      fill="#C9A227"
+    />
+  </g>
+
+  <!-- Text -->
+  <text
+    x="115" y="55"
+    font-size="32"
+    font-weight="700"
+    font-family="Inter, system-ui, sans-serif"
+    fill="#ffffff"
+    letter-spacing="-0.02em"
+  >TableCommander</text>
+
+  <text
+    x="115" y="78"
+    font-size="14"
+    font-weight="600"
+    font-family="Inter, system-ui, sans-serif"
+    fill="#C9A227"
+    letter-spacing="0.12em"
+  >COMMAND YOUR TABLE</text>
+</svg>
