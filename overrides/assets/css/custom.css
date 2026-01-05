@@ -48,6 +48,11 @@
     background-color: #161b22 !important;
 }
 
+/* Hide disabled nav links (not crawlable) */
+a.nav-link.disabled {
+    display: none !important;
+}
+
 /* Fix dropdown menu positioning to prevent overflow off screen */
 
 /* Desktop: proper dropdown positioning */
