@@ -23,14 +23,14 @@
 {% block styles %}
 <!-- Preload critical resources -->
 <link rel="preload" href="{{ 'assets/css/bootstrap.min.css'|url }}" as="style">
-<link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=optional" as="style">
 
 <!-- Critical CSS -->
 <link rel="stylesheet" href="{{ 'assets/css/bootstrap.min.css'|url }}">
 <link rel="stylesheet" href="{{ 'assets/css/root.min.css'|url }}">
 <link rel="stylesheet" href="{{ 'assets/css/main.min.css'|url }}">
 <link rel="stylesheet" href="{{ 'assets/css/media.min.css'|url }}">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=optional">
 
 <!-- Non-critical CSS (async) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="print" onload="this.media='all'">
