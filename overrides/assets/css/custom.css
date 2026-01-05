@@ -475,13 +475,10 @@
 }
 
 /* Portfolio logo styles */
-.md-content img[src*="portfolio"] {
+img[alt="TableCommander"],
+img[alt="Pickles Prizes"] {
+    height: 80px;
     max-height: 80px;
     width: auto;
-}
-
-.md-content img[alt="TableCommander"],
-.md-content img[alt="Pickles Prizes"] {
-    max-height: 80px;
-    width: auto;
+    display: block;
 }
