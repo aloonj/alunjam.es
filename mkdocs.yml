@@ -32,6 +32,7 @@ nav:
   - /home/alunj:
     - Portfolio: portfolio.md
   - /usr/share/docs:
+    - Index: docs-index.md
     - Broadband:
       - broadband/sky-fttp-opnsense.md
     - LLM/AI:
