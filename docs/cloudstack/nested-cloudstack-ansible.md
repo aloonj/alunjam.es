@@ -1,6 +1,6 @@
 ---
 date: 2025-11-20
-description: After working with vSphere, KVM, XCP-NG, and OpenStack over the years, CloudStack was one platform I hadn't properly explored. I built an Ansible playbook to deploy a complete nested CloudStack environment on a single KVM host.
+description: After working with vSphere, KVM, XCP-NG, and OpenStack over the years, CloudStack was one platform I hadn't properly explored. I built an Ansible playbook to deploy a complete nested CloudStack environment on a single KVM host...
 ---
 
 # Nested CloudStack with Ansible
