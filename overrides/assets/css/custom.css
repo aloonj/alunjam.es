@@ -1,14 +1,35 @@
-/* Body content typography - Inter for readability */
+/* Body content typography - Inter Light for readability */
 body #component-content article p,
 body #component-content article li,
 body #component-content article td,
 body #component-content article th,
-body #component-content article blockquote,
-body #component-content article strong,
+body #component-content article blockquote {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-weight: 300 !important;
+    font-size: 1.15rem !important;
+    line-height: 1.8 !important;
+}
+
+/* Bold/emphasis keep normal weight */
+body #component-content article strong {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-weight: 500 !important;
+}
+
 body #component-content article em {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-    font-size: 1.05rem !important;
-    line-height: 1.7 !important;
+    font-weight: 300 !important;
+}
+
+/* Headings in Inter */
+body #component-content article h1,
+body #component-content article h2,
+body #component-content article h3,
+body #component-content article h4,
+body #component-content article h5,
+body #component-content article h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-weight: 600 !important;
 }
 
 /* Constrain content width for comfortable reading */
@@ -16,10 +37,9 @@ body #component-content article em {
     max-width: 75ch;
 }
 
-/* Keep mono for code, pre, nav, headers, terminal elements */
+/* Keep mono for code, pre, nav, terminal elements */
 body #component-content article code,
 body #component-content article pre,
-body h1, body h2, body h3, body h4, body h5, body h6,
 body .navbar,
 body .sidebar,
 body .terminal-card,
