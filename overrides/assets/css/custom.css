@@ -40,6 +40,12 @@ body #component-content article h6 {
 /* Keep mono for code, pre, nav, terminal elements */
 body #component-content article code,
 body #component-content article pre,
+body #component-content article pre code {
+    font-size: 1.1rem !important;
+}
+
+body #component-content article code,
+body #component-content article pre,
 body .navbar,
 body .sidebar,
 body .terminal-card,
