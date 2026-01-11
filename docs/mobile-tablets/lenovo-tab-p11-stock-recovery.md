@@ -1,3 +1,7 @@
+---
+date: 2025-09-10
+---
+
 # Unbricking Lenovo Tab P11 (TB-J606F) - Stock Firmware Recovery
 
 This guide covers how to unbrick a Lenovo Tab P11 (TB-J606F) that's stuck in a boot loop, fastboot loop, or won't boot at all. This uses Qualcomm's EDL (Emergency Download) mode to flash complete stock firmware.

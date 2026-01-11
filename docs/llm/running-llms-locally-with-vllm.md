@@ -1,3 +1,7 @@
+---
+date: 2025-12-15
+---
+
 # Running LLMs Locally with vLLM
 
 I've been curious about running Large Language Models (LLMs) - think ChatGPT-style AI models - on my own hardware instead of relying on cloud services. After picking up two second-hand RTX 3090 graphics cards from CEX (£575 each), I decided to dive in and see what's possible with 48GB of VRAM at my disposal.

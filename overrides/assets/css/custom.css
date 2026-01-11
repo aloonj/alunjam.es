@@ -2,31 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 /* Body content typography - Inter for readability */
-.md-content p,
-.md-content li,
-.md-content td,
-.md-content th,
-.md-content blockquote {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+#component-content article p,
+#component-content article li,
+#component-content article td,
+#component-content article th,
+#component-content article blockquote {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
     font-size: 1.05rem;
     line-height: 1.7;
 }
 
 /* Constrain content width for comfortable reading */
-.md-content {
+#component-content article {
     max-width: 75ch;
 }
 
 /* Keep mono for code, pre, nav, headers, terminal elements */
-.md-content code,
-.md-content pre,
+#component-content article code,
+#component-content article pre,
 h1, h2, h3, h4, h5, h6,
 .navbar,
 .sidebar,
 .terminal-card,
 .terminal-header,
 .terminal-body {
-    font-family: 'Fira Mono', 'Courier New', monospace;
+    font-family: 'Fira Mono', 'Courier New', monospace !important;
 }
 
 /* Dark theme overrides */

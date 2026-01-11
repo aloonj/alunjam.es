@@ -46,6 +46,19 @@ nav:
 
 plugins:
   - search
+  - blogging:
+      dirs:
+        - broadband
+        - llm
+        - gcp
+        - cloudstack
+        - mobile-tablets
+      features:
+        tags:
+          index_page: false
+          insert: false
+      time_format: '%d %B %Y'
+      paging: false
 
 markdown_extensions:
   - pymdownx.highlight:

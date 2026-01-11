@@ -1,3 +1,7 @@
+---
+date: 2025-10-05
+---
+
 # Sky FTTP with OPNsense
 
 Getting Sky FTTP working with OPNsense is straightforward once you know the correct settings. Sky uses DHCP Option 61 for authentication instead of PPPoE, and you'll need both IPv4 and IPv6 configured.

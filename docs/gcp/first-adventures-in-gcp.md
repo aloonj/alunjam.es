@@ -1,3 +1,7 @@
+---
+date: 2026-01-11
+---
+
 # First Adventures in GCP
 
 I needed somewhere to run a dockerised web application - a Next.js frontend, NestJS backend, with Postgres and Redis for data storage. After years of working with various hosting options, I decided to properly explore Google Cloud Platform and see what the ecosystem offered for a scalable containerised stack.

@@ -1,3 +1,7 @@
+---
+date: 2025-11-20
+---
+
 # Nested CloudStack with Ansible
 
 After working with vSphere, KVM, XCP-NG, and OpenStack over the years, CloudStack was one platform I hadn't properly explored. Partly professional development, partly curiosity about cloud management platforms - I wanted to fill that gap.
