@@ -41,6 +41,7 @@ nav:
       - Tab P11 Stock Recovery: mobile-tablets/lenovo-tab-p11-stock-recovery.md
     - Virtualisation/Cloud:
       - cloudstack/nested-cloudstack-ansible.md
+      - gcp/first-adventures-in-gcp.md
 
 plugins:
   - search
