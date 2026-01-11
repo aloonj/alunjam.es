@@ -32,9 +32,9 @@ body #component-content article h6 {
     font-weight: 600 !important;
 }
 
-/* Constrain content width for comfortable reading */
+/* Let content fill available space */
 #component-content article {
-    max-width: 75ch;
+    max-width: 100%;
 }
 
 /* Keep mono for code, pre, nav, terminal elements */
