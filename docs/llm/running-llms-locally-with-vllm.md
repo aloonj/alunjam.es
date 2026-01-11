@@ -6,6 +6,8 @@ date: 2025-12-15
 
 I've been curious about running Large Language Models (LLMs) - think ChatGPT-style AI models - on my own hardware instead of relying on cloud services. After picking up two second-hand RTX 3090 graphics cards from CEX (£575 each), I decided to dive in and see what's possible with 48GB of VRAM at my disposal.
 
+<!-- more -->
+
 ## What Are Local LLMs?
 
 When you use ChatGPT or Claude, your prompts get sent to massive data centers where the AI models run on enterprise-grade hardware. Running LLMs locally means hosting these AI models on your own computer. The trade-off? You need serious GPU power, but you get complete privacy, no rate limits, and no monthly subscriptions.

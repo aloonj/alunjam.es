@@ -6,6 +6,8 @@ date: 2025-11-20
 
 After working with vSphere, KVM, XCP-NG, and OpenStack over the years, CloudStack was one platform I hadn't properly explored. Partly professional development, partly curiosity about cloud management platforms - I wanted to fill that gap.
 
+<!-- more -->
+
 The challenge was familiar: how do you test a distributed cloud platform without having multiple physical hosts lying around? The answer: nested virtualization.
 
 ## What is Apache CloudStack?
