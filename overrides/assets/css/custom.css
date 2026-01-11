@@ -1,15 +1,14 @@
-/* Import Inter for readable body text */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-
 /* Body content typography - Inter for readability */
-#component-content article p,
-#component-content article li,
-#component-content article td,
-#component-content article th,
-#component-content article blockquote {
+body #component-content article p,
+body #component-content article li,
+body #component-content article td,
+body #component-content article th,
+body #component-content article blockquote,
+body #component-content article strong,
+body #component-content article em {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: 1.05rem !important;
+    line-height: 1.7 !important;
 }
 
 /* Constrain content width for comfortable reading */
@@ -18,14 +17,14 @@
 }
 
 /* Keep mono for code, pre, nav, headers, terminal elements */
-#component-content article code,
-#component-content article pre,
-h1, h2, h3, h4, h5, h6,
-.navbar,
-.sidebar,
-.terminal-card,
-.terminal-header,
-.terminal-body {
+body #component-content article code,
+body #component-content article pre,
+body h1, body h2, body h3, body h4, body h5, body h6,
+body .navbar,
+body .sidebar,
+body .terminal-card,
+body .terminal-header,
+body .terminal-body {
     font-family: 'Fira Mono', 'Courier New', monospace !important;
 }
 
