@@ -49,6 +49,8 @@ plugins:
         - gcp
         - cloudstack
         - mobile-tablets
+      size: 3
+      full_content: false
       features:
         tags:
           index_page: false
