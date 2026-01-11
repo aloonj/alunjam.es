@@ -1,5 +1,6 @@
 ---
 date: 2025-12-15
+description: I've been curious about running Large Language Models on my own hardware instead of relying on cloud services. After picking up two second-hand RTX 3090 graphics cards, I decided to dive in and see what's possible with 48GB of VRAM.
 ---
 
 # Running LLMs Locally with vLLM

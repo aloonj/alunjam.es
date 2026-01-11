@@ -1,5 +1,6 @@
 ---
 date: 2026-01-11
+description: I needed somewhere to run a dockerised web application - a Next.js frontend, NestJS backend, with Postgres and Redis for data storage. After years of working with various hosting options, I decided to properly explore Google Cloud Platform.
 ---
 
 # First Adventures in GCP
