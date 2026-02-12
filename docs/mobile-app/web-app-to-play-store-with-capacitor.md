@@ -92,14 +92,6 @@ The main requirements:
 
 The build already produces an AAB for release, so the technical side was ready. The administrative side - store listing, content ratings, data safety declarations - took longer than the actual development.
 
-## GCP Workload Identity Federation
-
-Traditional CI/CD authentication to cloud providers uses long-lived service account keys stored as GitHub secrets. These don't expire by default and are a security risk if leaked.
-
-Workload Identity Federation lets GitHub Actions authenticate directly with GCP instead. GitHub provides a short-lived OIDC token, GCP validates it against the configured provider, and grants temporary credentials. No keys to rotate, no secrets to leak.
-
-Setup required creating a Workload Identity Pool and Provider in GCP, then granting the GitHub identity permission to impersonate the service account. More work upfront, but no credentials to worry about after that.
-
 ## Lessons Learned
 
 The gap between a web app and a native Capacitor wrapper is smaller than I expected. Status bar integration, haptics, screen orientation lock - it adds up to something that feels proper.
