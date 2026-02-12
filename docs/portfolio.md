@@ -29,6 +29,26 @@ Self-hosted multiplayer virtual tabletop for Magic: The Gathering. Build decks, 
 
 ---
 
+## TableCommander Companion
+
+[![TableCommander Companion](assets/img/tablecommander-companion-logo.svg)](https://play.google.com/store/apps/details?id=com.tablecommander.companion)
+
+Android companion app for TableCommander. Interact with your game table from your phone - view your hand, tap lands, track life totals.
+
+Built as a Capacitor wrapper around a React + Ant Design Mobile frontend, with OTA updates via Firebase Hosting so web-layer changes deploy without a Play Store release.
+
+Currently in closed testing on Google Play. Join the [Discord](https://discord.gg/jfHhwpPQ) to request access.
+
+**Stack:** React, Ant Design Mobile, Capacitor 8, Firebase App Distribution
+
+**Platform:** Android (iOS planned)
+
+**Tools:** Claude Code, Recraft.ai
+
+[Google Play (closed testing)](https://play.google.com/store/apps/details?id=com.tablecommander.companion)
+
+---
+
 ## Pickles Prizes
 
 [![Pickles Prizes](assets/img/pickles-prizes-logo.svg)](https://picklesprizes.co.uk)
