@@ -33,11 +33,15 @@ Self-hosted multiplayer virtual tabletop for Magic: The Gathering. Build decks, 
 
 [![TableCommander Companion](assets/img/tablecommander-companion-logo.svg)](https://play.google.com/store/apps/details?id=com.tablecommander.companion)
 
-Android companion app for TableCommander. Interact with your game table from your phone - view your hand, tap lands, track life totals.
+Android companion app for TableCommander. Interact with your game table from your phone. Currently in closed testing - join the [Discord](https://discord.gg/jfHhwpPQ) to request access.
 
-Built as a Capacitor wrapper around a React + Ant Design Mobile frontend, with OTA updates via Firebase Hosting so web-layer changes deploy without a Play Store release.
+**Features:**
 
-Currently in closed testing on Google Play. Join the [Discord](https://discord.gg/jfHhwpPQ) to request access.
+- Browse, search, and build decks on the go
+- Life, poison, and commander damage tracking
+- In-game actions and dice rolls
+- Real-time game log
+- OTA updates via Firebase - no Play Store wait
 
 **Stack:** React, Ant Design Mobile, Capacitor 8, Firebase App Distribution
 
