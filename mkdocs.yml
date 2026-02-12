@@ -31,6 +31,7 @@ nav:
   - /home: index.md
   - /home/alunj:
     - Blog:
+      - mobile-app/web-app-to-play-store-with-capacitor.md
       - gcp/first-adventures-in-gcp.md
       - llm/running-llms-locally-with-vllm.md
       - cloudstack/nested-cloudstack-ansible.md
@@ -49,6 +50,7 @@ plugins:
         - gcp
         - cloudstack
         - mobile-tablets
+        - mobile-app
       size: 3
       full_content: false
       features:
