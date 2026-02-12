@@ -33,10 +33,11 @@ Browse documentation by category.
 
 <div class="terminal-card" markdown="1">
 <div class="terminal-header">
-<span class="terminal-icon">📱</span> ~/mobile-tablets
+<span class="terminal-icon">📱</span> ~/mobile
 </div>
 <div class="terminal-body" markdown="1">
 
+- [Web App to Play Store with Capacitor](mobile-app/web-app-to-play-store-with-capacitor.md)
 - [Tab P11 LineageOS Install](mobile-tablets/lenovo-tab-p11-lineageos-install.md)
 - [Tab P11 Stock Recovery](mobile-tablets/lenovo-tab-p11-stock-recovery.md)
 
