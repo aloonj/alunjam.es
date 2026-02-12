@@ -5,7 +5,7 @@ description: I had a working web application built with React and Ant Design. Ge
 
 # From Web App to Play Store with Capacitor and GitOps
 
-I had a working web application - [TableCommander](https://tablecommander.com), a web app for managing Magic: The Gathering game sessions. Next.js frontend, NestJS backend. The question was whether I could get it into the Play Store without rewriting everything. Capacitor made that possible, and GitHub Actions made it repeatable.
+I had a working web application - [TableCommander](/portfolio/#tablecommander), a real-time multiplayer web app for playing Magic: The Gathering. Next.js frontend, NestJS backend. The question was whether I could get it into the Play Store without rewriting everything. Capacitor made that possible, and GitHub Actions made it repeatable.
 
 <!-- more -->
 
