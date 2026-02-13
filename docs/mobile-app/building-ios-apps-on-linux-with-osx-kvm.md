@@ -95,9 +95,30 @@ xcodebuild -project App.xcodeproj -scheme App \
   -configuration Debug CODE_SIGNING_ALLOWED=NO
 ```
 
-`CODE_SIGNING_ALLOWED=NO` skips certificates — fine for verifying the build compiles. The iOS Simulator won't work in a VM, so build for device with `-destination "generic/platform=iOS"`.
+`CODE_SIGNING_ALLOWED=NO` skips certificates — fine for verifying the build compiles.
 
 ![Building an iOS app on Linux - macOS Sonoma in QEMU with xcodebuild running from a Linux terminal](../assets/img/osx-kvm-ios-build.png)
+
+## Running in the Simulator
+
+The iOS Simulator works inside the VM too. Build for the simulator SDK, then launch it:
+
+```bash
+xcodebuild -project App.xcodeproj -scheme App \
+  -sdk iphonesimulator -configuration Debug
+
+xcrun simctl list devices available
+xcrun simctl boot "iPhone 16"
+open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
+
+xcrun simctl install "iPhone 16" \
+  ~/Library/Developer/Xcode/DerivedData/App-*/Build/Products/Debug-iphonesimulator/App.app
+xcrun simctl launch "iPhone 16" com.tablecommander.companion
+```
+
+You'll need the QEMU GUI window for this one — the simulator is graphical. It runs surprisingly well.
+
+![iOS Simulator running inside the macOS VM on Linux with build output in the foreground](../assets/img/osx-kvm-ios-simulator.png)
 
 ## Day-to-Day Workflow
 
@@ -110,7 +131,7 @@ The Mac VM is just a build machine.
 
 ## For App Store
 
-You don't need an Apple ID on the Mac, the Xcode GUI, or the iOS Simulator. You do need an **Apple Developer Account** ($99/year), signing certificates (generated in the web portal), and `xcrun altool` to upload. All account management happens in your browser on Linux.
+You don't need an Apple ID on the Mac or the Xcode GUI. You do need an **Apple Developer Account** ($99/year), signing certificates (generated in the web portal), and `xcrun altool` to upload. All account management happens in your browser on Linux.
 
 For Capacitor/React Native/Flutter apps where the Mac is just a build tool, a KVM VM does the job.
 
