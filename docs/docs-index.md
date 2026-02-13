@@ -37,6 +37,7 @@ Browse documentation by category.
 </div>
 <div class="terminal-body" markdown="1">
 
+- [Building iOS Apps on Linux with OSX-KVM](mobile-app/building-ios-apps-on-linux-with-osx-kvm.md)
 - [Web App to Play Store with Capacitor](mobile-app/web-app-to-play-store-with-capacitor.md)
 - [Tab P11 LineageOS Install](mobile-tablets/lenovo-tab-p11-lineageos-install.md)
 - [Tab P11 Stock Recovery](mobile-tablets/lenovo-tab-p11-stock-recovery.md)
