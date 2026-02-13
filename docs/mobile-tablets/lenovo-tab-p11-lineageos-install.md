@@ -2,7 +2,7 @@
 date: 2025-09-12
 ---
 
-# Installing LineageOS on Lenovo Tab P11 (TB-J606F)
+# LineageOS on Lenovo Tab P11
 
 This guide walks through installing LineageOS 20.0 (Android 13) GSI on the Lenovo Tab P11 using Andy Yan's builds. This gives you a clean, bloat-free Android experience without Lenovo's customizations.
 
