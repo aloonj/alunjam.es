@@ -1,5 +1,6 @@
 {#
-Custom blog template with thumbnail support.
+Custom blog template with thumbnail support and newspaper layout.
+First post is full-width hero, remaining posts in 2-column grid.
 Add `thumbnail: assets/img/image.png` to post frontmatter.
 #}
 
@@ -59,6 +60,46 @@ Add `thumbnail: assets/img/image.png` to post frontmatter.
         border: 1px solid #30363d;
         margin: 0.75rem 0;
     }
+
+    /* Hero: first post full width with larger thumbnail */
+    .md-typeset .blog-hero .blog-post-thumbnail {
+        max-height: 300px;
+    }
+
+    .md-typeset .blog-hero .blog-post-title {
+        font-size: 1.4em;
+    }
+
+    /* Grid: remaining posts in 2 columns */
+    .md-typeset .blog-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .md-typeset .blog-grid .blog-post {
+        margin: 0;
+    }
+
+    .md-typeset .blog-grid .blog-post hr {
+        display: none;
+    }
+
+    .md-typeset .blog-grid .blog-post {
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        padding: 1rem;
+    }
+
+    .md-typeset .blog-grid .blog-post-thumbnail {
+        max-height: 150px;
+    }
+
+    @media (max-width: 768px) {
+        .md-typeset .blog-grid {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
 {% endblock %}
 
@@ -112,41 +153,57 @@ Add `thumbnail: assets/img/image.png` to post frontmatter.
 {%- endmacro %}
 {% endif %}
 
-<div class = "md-typeset">
+<div class="md-typeset">
     <div class="pages">
         {% for page_idx in range(0, page_num) %}
             {% set pg_group = pages[page_idx*page_size:(page_idx + 1)*page_size] %}
             <div class="page" id="page{{ page_idx + 1 }}">
 
-                {% for pg in pg_group %}
-                    {# Setting variables. #}
+                {# First post: full-width hero #}
+                {% if pg_group|length > 0 %}
+                    {% set pg = pg_group[0] %}
                     {% set url = pg.canonical_url %}
-                    {% set title = pg.title %}
-                    {% if pg.meta and pg.meta.title_full %}
-                        {% set title = pg.meta.title_full %}
-                    {% endif %}
-
+                    {% set title = pg.meta.title_full if (pg.meta and pg.meta.title_full) else pg.title %}
                     {% set description = "" %}
                     {% if full_content %}
                         {% set description = pg.content|safe %}
                     {% elif pg.meta.description %}
                         {% set description = pg.meta.description|truncate %}
                     {% endif %}
+                    {% set time = pg.meta["localized-time"] if (pg.meta and pg.meta["localized-time"]) else "" %}
 
-                    {% set time = "" %}
-                    {% if pg.meta and pg.meta["localized-time"] %}
-                        {% set time = pg.meta["localized-time"] %}
-                    {% endif %}
+                    <div class="blog-hero">
+                        {% call render_blog(title, description, time, url, pg) %}
+                        {% endcall %}
+                    </div>
+                {% endif %}
 
-                    {% call render_blog(title, description, time, url, pg) %}
-                    {% endcall %}
-                {% endfor %}
+                {# Remaining posts: 2-column grid #}
+                {% if pg_group|length > 1 %}
+                    <div class="blog-grid">
+                        {% for pg in pg_group[1:] %}
+                            {% set url = pg.canonical_url %}
+                            {% set title = pg.meta.title_full if (pg.meta and pg.meta.title_full) else pg.title %}
+                            {% set description = "" %}
+                            {% if full_content %}
+                                {% set description = pg.content|safe %}
+                            {% elif pg.meta.description %}
+                                {% set description = pg.meta.description|truncate %}
+                            {% endif %}
+                            {% set time = pg.meta["localized-time"] if (pg.meta and pg.meta["localized-time"]) else "" %}
+
+                            {% call render_blog(title, description, time, url, pg) %}
+                            {% endcall %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
             </div>
         {% endfor %}
     </div>
 
     <div class="blog-center {{'blog-hidden' if page_num == 1 else '' }}">
-        <div class="blog-pagination " id="blog-pagination">
+        <div class="blog-pagination" id="blog-pagination">
             {% for num in range(page_num) %}
                 {% if num == 0 %}
                     {% set link = "" %}
