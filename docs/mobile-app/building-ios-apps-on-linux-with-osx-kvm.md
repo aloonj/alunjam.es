@@ -7,6 +7,8 @@ description: No Mac? Using QEMU/KVM and OSX-KVM to run macOS Sonoma on Linux, th
 
 In my [previous post](web-app-to-play-store-with-capacitor.md) I mentioned iOS was next. The catch: Xcode requires macOS, and I don't own a Mac. Turns out a Linux box with KVM is enough to build a Node.js Capacitor app for iOS.
 
+![iOS Simulator running in a macOS VM on Linux](../assets/img/osx-kvm-ios-simulator.png)
+
 <!-- more -->
 
 !!! warning "Disclaimer"
