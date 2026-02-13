@@ -45,6 +45,7 @@ nav:
 plugins:
   - search
   - blogging:
+      template: overrides/blog-custom.html
       dirs:
         - broadband
         - llm

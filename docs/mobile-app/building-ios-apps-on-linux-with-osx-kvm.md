@@ -1,6 +1,7 @@
 ---
 date: 2026-02-13
 description: No Mac? Using QEMU/KVM and OSX-KVM to run macOS Sonoma on Linux, then building a Node.js Capacitor iOS app over SSH.
+thumbnail: assets/img/osx-kvm-ios-simulator.png
 ---
 
 # Building iOS Apps on Linux with OSX-KVM
