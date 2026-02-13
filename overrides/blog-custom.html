@@ -75,6 +75,7 @@ Add `thumbnail: assets/img/image.png` to post frontmatter.
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
+        align-items: start;
     }
 
     .md-typeset .blog-grid .blog-post {
@@ -89,6 +90,12 @@ Add `thumbnail: assets/img/image.png` to post frontmatter.
         border: 1px solid #30363d;
         border-radius: 6px;
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .md-typeset .blog-grid .blog-post-description {
+        flex: 1;
     }
 
     .md-typeset .blog-grid .blog-post-thumbnail {
