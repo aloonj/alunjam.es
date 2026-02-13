@@ -53,7 +53,7 @@ plugins:
         - cloudstack
         - mobile-tablets
         - mobile-app
-      size: 3
+      size: 10
       full_content: false
       features:
         tags:
