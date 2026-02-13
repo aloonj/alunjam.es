@@ -31,6 +31,7 @@ nav:
   - /home: index.md
   - /home/alunj:
     - Blog:
+      - mobile-app/building-ios-apps-on-linux-with-osx-kvm.md
       - mobile-app/web-app-to-play-store-with-capacitor.md
       - gcp/first-adventures-in-gcp.md
       - llm/running-llms-locally-with-vllm.md
