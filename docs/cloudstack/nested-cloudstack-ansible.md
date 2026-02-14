@@ -50,7 +50,7 @@ Getting this working was surprisingly straightforward - a few hours to get the a
 
 Right now I'm going through the full CloudStack workflow - configuring zones, pods, and clusters through the web interface. Creating OS images for guest instances and building out some demo environments.
 
-![CloudStack Dashboard](cloudstack-demo.png)
+![CloudStack Dashboard](cloudstack-demo.webp)
 
 The automation handles infrastructure deployment reliably. I've tested it extensively on KVM hosts and the Ansible run completes successfully. What it doesn't do is automate the CloudStack configuration wizard - that's still manual, though I might create a guide for it later.
 

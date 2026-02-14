@@ -1,6 +1,6 @@
 ---
 date: 2026-02-12
-thumbnail: assets/img/playstore-tablecommander.png
+thumbnail: assets/img/playstore-tablecommander.webp
 description: I had a working web application built with React and Ant Design. Getting it into the Play Store as a native Android app using Capacitor and automated GitOps turned out to be more straightforward than expected, with a few gotchas along the way...
 ---
 

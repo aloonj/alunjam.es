@@ -1,7 +1,7 @@
 ---
 date: 2026-02-13
 description: No Mac? Using QEMU/KVM and OSX-KVM to run macOS Sonoma on Linux, then building a Node.js Capacitor iOS app over SSH.
-thumbnail: assets/img/osx-kvm-ios-simulator.png
+thumbnail: assets/img/osx-kvm-ios-simulator.webp
 ---
 
 # Building iOS Apps on Linux with OSX-KVM
@@ -17,7 +17,7 @@ In my [previous post](web-app-to-play-store-with-capacitor.md) I mentioned iOS w
 
 [OSX-KVM](https://github.com/kholia/OSX-KVM) handles the OpenCore bootloader, OVMF firmware, and QEMU configuration. You need an Intel or AMD CPU with virtualisation extensions, 16GB+ spare RAM, and ~80GB disk.
 
-![macOS Sonoma installer running inside QEMU on Linux](../assets/img/osx-kvm-sonoma-setup.png)
+![macOS Sonoma installer running inside QEMU on Linux](../assets/img/osx-kvm-sonoma-setup.webp)
 
 ```bash
 git clone https://github.com/kholia/OSX-KVM.git
@@ -41,7 +41,7 @@ Sonoma works with `Skylake-Client`. QEMU may warn about missing CPU features (PC
 
 The default OpenCore ships with shared serial numbers. You'll hit "this Mac has been used to create too many Apple IDs". Either generate unique serials with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS), or just skip the Apple ID during setup — you don't need one on the Mac itself.
 
-![macOS Sonoma desktop running in QEMU](../assets/img/osx-kvm-sonoma-desktop.png)
+![macOS Sonoma desktop running in QEMU](../assets/img/osx-kvm-sonoma-desktop.webp)
 
 ## SSH In, Skip the GUI
 
@@ -98,7 +98,7 @@ xcodebuild -project App.xcodeproj -scheme App \
 
 `CODE_SIGNING_ALLOWED=NO` skips certificates — fine for verifying the build compiles.
 
-![Building an iOS app on Linux - macOS Sonoma in QEMU with xcodebuild running from a Linux terminal](../assets/img/osx-kvm-ios-build.png)
+![Building an iOS app on Linux - macOS Sonoma in QEMU with xcodebuild running from a Linux terminal](../assets/img/osx-kvm-ios-build.webp)
 
 ## Running in the Simulator
 
@@ -119,7 +119,7 @@ xcrun simctl launch "iPhone 16" com.tablecommander.companion
 
 You'll need the QEMU GUI window for this one — the simulator is graphical. It runs surprisingly well.
 
-![iOS Simulator running inside the macOS VM on Linux with build output in the foreground](../assets/img/osx-kvm-ios-simulator.png)
+![iOS Simulator running inside the macOS VM on Linux with build output in the foreground](../assets/img/osx-kvm-ios-simulator.webp)
 
 ## Day-to-Day Workflow
 
